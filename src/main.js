@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 
 import Home from './components/home';
 import About from './components/about';
+import Emails from './components/emails/email-main.vue';
 import MainNav from './components/main-nav';
 
 Vue.use(VueRouter);
@@ -14,7 +15,12 @@ const routes = [{
 }, {
   path: '/about',
   component: About
-}]
+}, {
+  path: '/emails',
+  component: Emails
+}
+];
+
 
 const router = new VueRouter({
   mode: 'history',
