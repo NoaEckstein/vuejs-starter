@@ -1,4 +1,12 @@
-    <template src="./emails.component.html">
+  <template src="./emails.component.html">
+
+  </template>
+  
+  
+  
+  
+  
+    <!--<template src="./emails.component.html">
   <div>
     
     <email-list @SelectedEmail="selectemail"> </email-list>
@@ -72,4 +80,4 @@ li {
 a {
   color: #42b983;
 }
-</style>
+</style>-->
