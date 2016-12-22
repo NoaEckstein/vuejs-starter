@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 
 import Home from './components/home';
 import About from './components/about';
-import Emails from './components/emails/email-main';
+import Emails from './components/emails/email-main/email-main';
 import MainNav from './components/main-nav';
 import Events from './components/events';
 
