@@ -2,8 +2,6 @@ import style from './style.scss';
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource'
-
 
 import Home from './components/home';
 import About from './components/about';
@@ -35,8 +33,6 @@ const router = new VueRouter({
   mode: 'history',
   routes
 })
-
-Vue.http.options.root = 'http://localhost:3003';
 
 const app = new Vue({
   router,
