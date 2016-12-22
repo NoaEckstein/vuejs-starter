@@ -1,4 +1,11 @@
-<template>
+<template src="./email-list.html"></template>
+<script src="./email-list.js"></script>
+<style src="./email-list.scss" scoped lang="scss"></style>
+
+
+
+
+<!--<template>
     <section>
         <h1>Email List</h1>
         
@@ -23,7 +30,7 @@
             }
         },
         methods: {
-            
+            -->
            
         },
         components: {
