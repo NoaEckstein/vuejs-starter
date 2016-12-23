@@ -1,0 +1,12 @@
+
+  <ul>
+            <li v-for="(currMail, id) in emails">
+                <email-preview :email="currMail">
+                             <!--@click.stop.native="$emit('selectCar',currCar.id)"
+                             @doDelete="propegateDeleteReq"
+                             @doEdit="$emit('doEdit', $event)"-->
+                           
+                </email-preview>
+            </li>
+            
+        </ul>
