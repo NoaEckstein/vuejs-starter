@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import emailPrev from '../email-preview/email-preview.vue'
 import emailList from '../email-list/email-list.vue'
 
 
 
+=======
+ 
+import emailcompose from '../email-compose/email-compose.vue';
+>>>>>>> ee1c89836db56388ab5f5cfa31f2b5c31d4193f5
 export default  {
 
 
@@ -10,6 +15,7 @@ export default  {
 
     
     return {
+<<<<<<< HEAD
          emails: [
                 {name: 'wowmotherfuckaaa', id: 1}
                 ]
@@ -24,4 +30,13 @@ export default  {
 
         }
   
+=======
+      name: 'avital'
+      
+    }
+  },
+  components:{
+    emailcompose
+  }
+>>>>>>> ee1c89836db56388ab5f5cfa31f2b5c31d4193f5
 }

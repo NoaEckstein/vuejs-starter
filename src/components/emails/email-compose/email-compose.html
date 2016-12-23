@@ -1,3 +1,10 @@
-<template>
-    
-</template>
+<section>
+    <form>
+        <div class="form-group">
+        Subject: <input type="text" class="form-control" v-model="emailCompose.subject">
+            Body: <input type="text" class="form-control" v-model="emailCompose.body">
+        </div>
+        <button @click.prevent="save" class="btn btn-primary">Send</button>
+    </form>
+</section>
+
