@@ -1,7 +1,7 @@
 import style from './style.scss';
-import Vue from 'vue'
+import Vue from 'vue';
+import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource'
 
 import Home from './components/home';
 import About from './components/about';
@@ -11,29 +11,28 @@ import Events from './components/events';
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.http.options.root = 'http://localhost:3003';
 
 const routes = [{
-  path: '/',
-  component: Home
-}, {
-  path: '/about',
-  component: About
+    path: '/',
+    component: Home
+  }, {
+    path: '/about',
+    component: About
 
-},{
-  path: '/events',
-  component: Events
-},{
-  path: '/emails',
-  component: Emails
-}
+  },{
+    path: '/events',
+    component: Events
+  },{
+    path: '/emails',
+    component: Emails
+  }
 ];
 
 const router = new VueRouter({
   mode: 'history',
   routes
 })
-
-Vue.http.options.root = 'http://localhost:3003';
 
 const app = new Vue({
   router,
