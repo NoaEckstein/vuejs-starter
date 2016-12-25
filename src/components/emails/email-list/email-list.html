@@ -1,6 +1,16 @@
-<section v-if="car">
-        <h1>{{car.name}} </h1>
-        <h2>{{car.price}} </h2>
-        <img :src="`/src/assets/car/${car.id}.png`" alt="">
-        <button @click="nextCar">Next</button>
-    </section>
+
+<section>
+ <ul>
+            <li v-for="(currEmail, id) in emails">
+                <email-preview :email="currEmail"
+
+                        @click.stop.native="$emit('selectEmail',currEmail.id)"
+                        @doDelete="propegateDeleteReq"
+                        @doEdit="$emit('doEdit', $event)" >
+                           
+                </email-preview>
+            </li>
+            
+        </ul>
+</section>
+

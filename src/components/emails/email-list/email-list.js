@@ -1,27 +1,28 @@
-export default {
-        data() {
+
+
+import emailPrev from '../email-preview/email-preview.vue'
+// import emaildetails from '../email-details/email-details.vue'
+    export default {
+        props: {
+            emails: {
+                required: false,
+                type: Array
+            }
+        },
+        data(){
             return {
-                car: null
+        
             }
         },
         methods: {
-            nextCar(){
-                const nextId = this.car.id+1;
-                this.$router.push(`/car/${nextId}`);
-                this.loadCar(this.car.id+1);
-            },
-            loadCar(carId) {
-                this.$http.get(`item/${carId}`)
-                    .then(res => res.json())
-                    .then(car => this.car = car);
-            }
+           propegateDeleteReq(deleteReq) {
+               this.$emit('doDelete', deleteReq)
+           }
         },
-        created() {
-            // console.log('this.$route.params', this.$route.params);
-             const carId = this.$route.params.id
-             this.loadCar(carId);
-             
+        components: {
+            'email-preview' : emailPrev
         }
-      
+
 
     }
+
