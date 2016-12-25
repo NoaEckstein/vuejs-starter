@@ -10,10 +10,7 @@ import emailPrev from '../email-preview/email-preview.vue'
         },
         data(){
             return {
-                // emails: [
-                //     {name: 'wowmotherfuckaaa', id: 1}
-                // ]
-               
+        
             }
         },
         methods: {
