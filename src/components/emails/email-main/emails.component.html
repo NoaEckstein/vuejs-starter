@@ -1,16 +1,26 @@
 <div>
 <email-list
-   :cars="carsToDisplay" 
-            @selectCar="selectCar"
-            @doDelete="deleteCar"
-            @doEdit="carToEdit = $event"
+   :emails="emailsToDisplay" 
+            @selectEmail="selectEmail"
+            @doDelete="deleteEmail"
+            @doEdit="emailToEdit = $event"
             >
-  
-  
+  <email-status :emailCount="emailsToDisplay.length"></email-status>
    </email-list>
 
   <h1>Emails Component</h1>
   <h2>what on earth???</h2>
   <p>{{name}}</p>
-  <emailcompose></emailcompose>
+  <!--<email-compose></email-compose>-->
+  <email-details></email-details>
+
+
 </div>
+  
+  
+
+
+
+
+
+

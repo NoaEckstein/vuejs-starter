@@ -1,14 +1,13 @@
- export default {
-     props: {
+export default {
+    props: {
         email: {
             required: true,
             type: Object
-            },
-        
-    },
-        data(){
-            return {
-              isSelected: false
-            }
-        },
         }
+    },
+    data(){
+        return {
+            isSelected: false
+        }
+    },
+}

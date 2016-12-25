@@ -1,61 +1,61 @@
+
 // import emailPrev from '../email-preview/email-preview.vue'
-import emailList from '../email-list/email-list.vue'
-import emailcompose from '../email-compose/email-compose.vue';
-import emaildetails from '../email-details/email-details.vue';
-import emailstatus from '../email-status/email-status.vue';
-
-
+import emailCompose from '../email-compose/email-compose.vue';
+import emailDetails from '../email-details/email-details.vue';
+import emailStatus from '../email-status/email-status.vue';
+import emailList from '../email-list/email-list.vue';
 
 export default {
 
-
-  data: () => {
-
-    return {
-      name: 'avital'
+    data: () => {
+        return {
+            name: 'avital',
+            emails: [],
+            emailsFilter:''
+        }
+    },
+    methods: {
+        deleteEmail(deleteReq) {
+            console.log('Deleting Email: ', deleteReq.emailId, ' requested at: ', deleteReq.timestamp);
+            this.emails = this.emails.filter(email => email.id !== deleteReq.emailId);
+            this.$http.delete(`email/${deleteReq.emailId}`);
+        },
+    selectEmail(emailId) {
+        // console.log('Selecting ', emailId);
+        // this.emails.forEach(email => {
+        //     if (email.id === emailId)   email.isSelected = !email.isSelected;
+        //     else                    email.isSelected = false;
+        // });
+        this.$router.push(`/email/${emailId}`);
+    },
+    reloadEmails() {
+        // fetch('http://localhost:3003/item')
+        this.$http.get('email')
+            .then(res => res.json())
+            .then(emails => this.emails = emails);
+        this.emailToEdit = undefined;
+        this.showEmailEdit = false;
     }
-  },
-   methods: {
-            selectCar(carId){
-                // console.log('Selecting ', carId);
-                // this.cars.forEach(car => {
-                //     if (car.id === carId)   car.isSelected = !car.isSelected;
-                //     else                    car.isSelected = false;
-                // });
-                this.$router.push(`/car/${carId}`);
-            },
-    deleteCar(deleteReq) {
-                    console.log('Deleting Car: ', deleteReq.carId, ' requested at: ', deleteReq.timestamp);
-                    this.cars = this.cars.filter(car => car.id !== deleteReq.carId);
-                    this.$http.delete(`item/${deleteReq.carId}`);
-            },
-            
-            reloadCars() {
-                // fetch('http://localhost:3003/item')
-                 this.$http.get('item')
-                    .then(res => res.json())
-                    .then(cars => this.cars = cars);
-                 this.carToEdit = undefined;   
-                 this.showCarEdit = false;
+},
+computed: {
+    emailsToDisplay() {
+        return this.emails.filter(email => {
+            return email.subject.includes(this.emailsFilter);
+        })
+    }
+},
+created() {
+    // console.log('this.$route.params', this.$route.params);
+    // const emailId = this.$route.params.id;
+    this.reloadEmails();
 
-            }
-        },
-        computed:{
-            carsToDisplay() {
-                return this.cars.filter(car => {
-                    return car.name.includes(this.carsFilter.name);
-                })
-            }
-        },
-       created() {
-           this.reloadCars();
-       },
+},
 
-  components: {
-    'email-list': emailList,
-    emailcompose,   emaildetails,
-    emailstatus
+components: {
+    'email-compose': emailCompose,
+    'email-details': emailDetails,
+    'email-status': emailStatus,
+    'email-list': emailList
 
   }
 }
-  

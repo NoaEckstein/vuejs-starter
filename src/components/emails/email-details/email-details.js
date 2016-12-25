@@ -7,11 +7,13 @@
         },
         methods: {
             // do i need next email function?
-            nextEmail(){
-                const nextId = this.email.id+1;
-                this.$router.push(`/email/${nextId}`);
-                this.loadEmail(this.email.id+1);
-            },
+            // nextEmail(){
+            //     const nextId = this.email.id+1;
+            //     this.$router.push(`/email/${nextId}`);
+            //     this.loadEmail(this.email.id+1);
+            // },
+
+            
             loadEmail(emailId) {
                 console.log('email-details');
 
@@ -33,12 +35,7 @@
             },*/
             }
         },
-        created() {
-            // console.log('this.$route.params', this.$route.params);
-             const emailId = this.$route.params.id
-             this.loadEmail(emailId);
-             
-        }
+       
     
     }
 
