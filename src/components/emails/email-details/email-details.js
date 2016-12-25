@@ -1,9 +1,8 @@
 
     export default {
-        props:email,
+        props:['email'],
         data() {
             return {
-                email: null
             }
         },
         methods: {
