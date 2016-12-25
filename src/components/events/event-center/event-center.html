@@ -1,5 +1,6 @@
 <section>
   <h1>Event Collection</h1>
-  <event-list :events="events">
+  <events-filter @filterChanged="eventsFilter = $event"></events-filter>
+  <event-list :events="eventsToDisplay">
   </event-list>
 </section>
