@@ -1,5 +1,5 @@
  export default {
-        props: ['carsCount'],
+        props: ['emailsCount'],
         data(){
             return {
                 
