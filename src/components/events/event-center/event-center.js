@@ -1,3 +1,5 @@
+import EventList from '../event-list'
+
 export default {
   data: () => {
     return {
@@ -9,12 +11,12 @@ export default {
       this.$http.get('event')
         .then(res => res.json())
         .then(events => this.events = events);
-      // this.carToEdit = undefined;
-      // this.showCarEdit = false;
     }
   },
-     created() {
-           this.reloadEvents();
-            
-       }
+  created() {
+    this.reloadEvents();
+  },
+  components: {
+    'event-list': EventList
+  }
 }
