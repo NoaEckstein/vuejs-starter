@@ -31,6 +31,7 @@ export default {
                 
             },
              loadEmail(emailId) {
+                console.log('email-compose');
                 this.$http.get(`email/${emailId}`)
                     .then(res => res.json())
                     .then(email => this.email = email);
