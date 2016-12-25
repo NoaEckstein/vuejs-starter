@@ -1,8 +1,10 @@
 <section>
     <h1>I'm event list</h1>
     <ul>
-        <li v-for="event in events">
-            <event-preview :event="event"></event-preview>
+        <li v-for="(event,idx) in events">
+            <event-preview :event="event" @click.stop.native="$emit('selectEvent',event.id)">
+
+            </event-preview>
 
         </li>
 

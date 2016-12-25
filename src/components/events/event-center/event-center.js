@@ -5,10 +5,20 @@ export default {
   data: () => {
     return {
       events: [],
-      eventsFilter: {name: ''}
+      eventsFilter: { name: '' }
     }
   },
   methods: {
+    selectEvent(eventId) {
+      console.log('Selecting ', eventId);
+      // this.events.forEach(event => {
+      //     if (event.id === eventId)   event.isSelected = !event.isSelected;
+      //     else                    event.isSelected = false;
+      // });
+      
+      // this.$router.push(`/event/${eventId}`);
+    },
+
     reloadEvents() {
       console.log('events');
       this.$http.get('event')
