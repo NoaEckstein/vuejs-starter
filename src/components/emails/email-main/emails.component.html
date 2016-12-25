@@ -1,11 +1,17 @@
 <div>
 
-  <!--<email-list></email-list>-->
+
 
   <h1>Emails Component</h1>
   <h2>what on earth???</h2>
   <p>{{name}}</p>
-  <emailcompose></emailcompose>
-  <!--<email-details></email-details>-->
+  <!--<email-compose></email-compose>-->
+  <email-details></email-details>
+  <email-list :emails = "emailsToDisplay"
+              @doDelete="deleteEmail">
+
+  </email-list>
   <!--<email-status :emailCount="emailsToDisplay.length"></email-status>-->
+
 </div>
+
