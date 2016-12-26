@@ -5,7 +5,6 @@
             @selectEmail="selectEmail"
             @doDelete="deleteEmail"
             @doEdit="emailToEdit = $event">
-  <email-status :emailCount="emailsToDisplay.length"></email-status>
    </email-list>
 
   <h1>Emails Component</h1>
@@ -13,6 +12,7 @@
   <p>{{name}}</p>
   <email-compose></email-compose>
   <email-details :email="selectedEmail"></email-details>
+  <email-status :emails="emails"></email-status>
 
 
 </div>
