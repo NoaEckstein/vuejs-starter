@@ -7,7 +7,7 @@
             @selectEmail="selectEmail"
             @doDelete="deleteEmail"
             @doEdit="emailToEdit = $event">
-  <email-status :emailCount="emailsToDisplay.length" class= "list"></email-status>
+
    </email-list>
    <email-details :email="selectedEmail" class= "details"></email-details>
 </div>
@@ -15,9 +15,8 @@
   <h2>what on earth???</h2>
   <p>{{name}}</p>
 
-  <!--<email-compose ></email-compose>-->
-  <!--<email-details></email-details>-->
-
+  
+  <email-status :emails="emails"></email-status>
 
 
 

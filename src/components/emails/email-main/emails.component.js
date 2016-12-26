@@ -25,7 +25,6 @@ export default {
     selectEmail(email) {
         console.log('selected');
         this.selectedEmail = email;
-        
         // console.log('Selecting ', emailId);
         // this.emails.forEach(email => {
         //     if (email.id === emailId)   email.isSelected = !email.isSelected;
