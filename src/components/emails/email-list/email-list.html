@@ -3,8 +3,7 @@
     <ul>
         <li v-for="(currEmail, id) in emails">
         <email-preview :email="currEmail"
-                @click.stop.native="$emit('selectEmail',currEmail)"
-                @doDelete="propegateDeleteReq"
+                @click.stop.native="selectingEmail(currEmail)"
                 @doEdit="$emit('doEdit', $event)" >
         </email-preview>
         </li>    

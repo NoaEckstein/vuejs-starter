@@ -2,3 +2,15 @@ $color: orange;
 h1 {
   color:$color;
 }
+
+.flex {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  max-width: 200px;
+  margin: 10px;
+}

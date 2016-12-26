@@ -1,13 +1,20 @@
- <section v-if="email" border= "1px solid black">
-     <div class="email-subject" border= "1px solid black" >
+ <section v-if="email" border= "5px solid black">
+     <!--<div class="email-subject" border= "1px solid black" >
         <img :src="`/src/assets/email/message.png`" alt="">
         <h1>{{email.subject}} </h1>
-     </div>
-     <div class="email-body" border= "1px solid black" >{{email.body}} </div>
+     </div>-->
+     <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{email.subject}}</h3>
+  </div>
+  <div class="panel-body">
+    {{email.body}}
+  </div>
+</div>
+     <!--<div class="email-body" border= "5px solid black" >{{email.body}} </div>-->
 
-    <button @click.stop="deleteEmail">Delete</button>
-      
-        <!--<img :src="`/src/assets/email/${email.id}.png`" alt="">-->
+    <button @click.stop="deleteEmail" class="btn btn-danger">Delete</button>
+        <!--<img :src="` ../../assets/email/${email.id}.png`" alt="">-->
         <!--<button @click="nextCar">Next</button>-->
  
     <!--<router-link :to="`/email/${email.id}/edit`">Edit</router-link>-->

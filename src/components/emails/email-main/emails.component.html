@@ -1,26 +1,20 @@
 <div>
-
 <router-link to="/emails/compose" class="btn btn-primary butt">Compose Mail</router-link>
-
-<email-list
+<div class= "flex">
+  <email-list
    :emails="emailsToDisplay" 
             @selectEmail="selectEmail"
-            @doDelete="deleteEmail"
             @doEdit="emailToEdit = $event">
-  <email-status :emailCount="emailsToDisplay.length"></email-status>
-   </email-list>
 
+   </email-list>
+   <email-details :email="selectedEmail" @doDelete="deleteEmail" class= "details"></email-details>
+</div>
   <h1>Emails Component</h1>
   <h2>what on earth???</h2>
   <p>{{name}}</p>
 
-  <!--<email-compose ></email-compose>-->
-  <!--<email-details></email-details>-->
-
-  <email-details :email="selectedEmail"></email-details>
-
-
-
+  
+  <email-status :emails="emails"></email-status>
 </div>
   
   
