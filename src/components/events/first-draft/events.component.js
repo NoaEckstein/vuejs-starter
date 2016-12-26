@@ -1,12 +1,12 @@
 export default {
   data: () => {
     return {
-      events: []
+      events: [],
+      filter: { name: '' }
     }
   },
   methods: {
     reloadEvents() {
-      console.log('events');
       this.$http.get('event')
         .then(res => res.json())
         .then(events => this.events = events);
@@ -14,8 +14,16 @@ export default {
       // this.showCarEdit = false;
     }
   },
-     created() {
-           this.reloadEvents();
-            
-       }
+
+  computed: {
+    eventsToDisplay() {
+      return this.events.filter(event => {
+        return event.name.includes(this.filter.name);
+      })
+    }
+  },
+  created() {
+    this.reloadEvents();
+
+  }
 }

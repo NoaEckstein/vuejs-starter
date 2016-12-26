@@ -12,7 +12,8 @@ export default {
             showcomp: false,
             name: 'avital',
             emails: [],
-            emailsFilter:''
+            emailsFilter:'',
+            selectedEmail: {}
         }
     },
     methods: {
@@ -24,13 +25,16 @@ export default {
             this.emails = this.emails.filter(email => email.id !== deleteReq.emailId);
             this.$http.delete(`email/${deleteReq.emailId}`);
         },
-    selectEmail(emailId) {
+    selectEmail(email) {
+        console.log('selected');
+        this.selectedEmail = email;
+        
         // console.log('Selecting ', emailId);
         // this.emails.forEach(email => {
         //     if (email.id === emailId)   email.isSelected = !email.isSelected;
         //     else                    email.isSelected = false;
         // });
-        this.$router.push(`/email/${emailId}`);
+        // this.$router.push(`/email/${email}`);
     },
     reloadEmails() {
         // fetch('http://localhost:3003/item')

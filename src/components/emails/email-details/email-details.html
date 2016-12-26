@@ -1,13 +1,14 @@
- <section v-if="email">
-     <div class="email-subject">
+ <section v-if="email" border= "1px solid black">
+     <div class="email-subject" border= "1px solid black" >
         <img :src="`/src/assets/email/message.png`" alt="">
         <h1>{{email.subject}} </h1>
      </div>
-     <div class="email-body">{{email.body}} </div>
-        <!--check for correct writing:which pic should use open or closed-->
-        
+     <div class="email-body" border= "1px solid black" >{{email.body}} </div>
+
+    <button @click.stop="deleteEmail">Delete</button>
+      
         <!--<img :src="`/src/assets/email/${email.id}.png`" alt="">-->
         <!--<button @click="nextCar">Next</button>-->
-    <button @click.stop="deleteEmail">Delete</button>
+ 
     <!--<router-link :to="`/email/${email.id}/edit`">Edit</router-link>-->
-    </section>
+</section>
