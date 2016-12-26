@@ -4,7 +4,6 @@
         <li v-for="(currEmail, id) in emails">
         <email-preview :email="currEmail"
                 @click.stop.native="$emit('selectEmail',currEmail)"
-                @doDelete="propegateDeleteReq"
                 @doEdit="$emit('doEdit', $event)" >
         </email-preview>
         </li>    
