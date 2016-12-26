@@ -2,7 +2,7 @@ export default {
     props: ['emails'],
     data() {
         return {
-
+            readPrecentage:0
         }
     },
     methods: {
@@ -10,7 +10,6 @@ export default {
     },
     watch: {
         emails() {
-            console.log('readPrecentageCalc');
             var isReadCount = 0;
             this.emails.forEach(function(currEmail) {
                 // console.log('currEmail', currEmail);
@@ -18,6 +17,7 @@ export default {
                     isReadCount++;
                 }
             });
+            this.readPrecentage = isReadCount*100/this.emails.length;
             console.log('isReadCount', isReadCount);
             
         }

@@ -14,6 +14,14 @@ import emailPrev from '../email-preview/email-preview.vue'
         
             }
         },
+        methods:{
+            selectingEmail(currEmail){
+                console.log('email-list', currEmail);
+                
+                this.$emit('selectEmail',currEmail)
+                
+            }
+        },
         components: {
             'email-preview' : emailPrev
         }
