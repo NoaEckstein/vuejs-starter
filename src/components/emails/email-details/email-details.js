@@ -3,6 +3,8 @@
         props:['email'],
         data() {
             return {
+                // currEmail: {subject: ':-P', body: ':-)  '}
+             
             }
         },
         methods: {
@@ -24,15 +26,6 @@
             deleteEmail(emailId){
                 this.$emit('doDelete', {emailId:this.email.id})
 
-
-                /*
-                deleteCar() {
-                this.$emit('doDelete', {carId: this.car.id, timestamp: Date.now()});
-
-            },
-            editEmail() {
-                this.$emit('doEdit', this.email);
-            },*/
             }
         },
        
