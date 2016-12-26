@@ -14,11 +14,6 @@ import emailPrev from '../email-preview/email-preview.vue'
         
             }
         },
-        methods: {
-           propegateDeleteReq(deleteReq) {
-               this.$emit('doDelete', deleteReq)
-           }
-        },
         components: {
             'email-preview' : emailPrev
         }
