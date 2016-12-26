@@ -8,15 +8,14 @@ export default {
     methods: {
 
     },
-    computed: {
-        readPrecentageCalc() {
+    watch: {
+        emails() {
             console.log('readPrecentageCalc');
             var isReadCount = 0;
             this.emails.forEach(function(currEmail) {
+                // console.log('currEmail', currEmail);
                 if (currEmail.isRead) {
                     isReadCount++;
-                }else{
-                    isRead;
                 }
             });
             console.log('isReadCount', isReadCount);
