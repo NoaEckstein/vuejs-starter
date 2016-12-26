@@ -1,5 +1,6 @@
 import EventList from '../event-list'
 import EventsFilter from '../events-filter'
+import EventDetails from '../event-details'
 
 export default {
   data: () => {
@@ -38,6 +39,7 @@ export default {
   },
   components: {
     'event-list': EventList,
-    'events-filter': EventsFilter
+    'events-filter': EventsFilter,
+    'event-details': EventDetails
   }
 }
