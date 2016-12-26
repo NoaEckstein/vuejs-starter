@@ -23,8 +23,9 @@
                     .then(res => res.json())
                     .then(email => this.email = email);
             },
-            deleteEmail(emailId){
-                this.$emit('doDelete', {emailId:this.email.id})
+            deleteEmail(){
+                console.log('deleteEmail', this.email.id);
+                this.$emit('doDelete', this.email.id)
 
             }
         },

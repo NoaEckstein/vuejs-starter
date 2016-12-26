@@ -16,33 +16,32 @@ export default {
         }
     },
     methods: {
-    
-        deleteEmail(deleteReq) {
-            console.log('Deleting Email: ', deleteReq.emailId, ' requested at: ', deleteReq.timestamp);
-            this.emails = this.emails.filter(email => email.id !== deleteReq.emailId);
-            this.$http.delete(`email/${deleteReq.emailId}`);
+        deleteEmail(deleteId) {
+            console.log('Deleting Email: ', deleteId);
+            this.emails = this.emails.filter(email => email.id !== deleteId);
+            this.$http.delete(`email/${deleteId}`);
         },
-    selectEmail(email) {
-        console.log('selected');
-        this.selectedEmail = email;
-        // console.log('Selecting ', emailId);
-        // this.emails.forEach(email => {
-        //     if (email.id === emailId)   email.isSelected = !email.isSelected;
-        //     else                    email.isSelected = false;
-        // });
-        // this.$router.push(`/email/${email}`);
-    },
-    reloadEmails() {
-        // fetch('http://localhost:3003/item')
-        this.$http.get('email')
-            .then(res => res.json())
-            .then(emails => {
-                this.emails = emails;
-                this.selectedEmail=this.emails[0];
-            });
-        this.emailToEdit = undefined;
-        this.showEmailEdit = false;
-    }
+        selectEmail(email) {
+            console.log('selected');
+            this.selectedEmail = email;
+            // console.log('Selecting ', emailId);
+            // this.emails.forEach(email => {
+            //     if (email.id === emailId)   email.isSelected = !email.isSelected;
+            //     else                    email.isSelected = false;
+            // });
+            // this.$router.push(`/email/${email}`);
+        },
+        reloadEmails() {
+            // fetch('http://localhost:3003/item')
+            this.$http.get('email')
+                .then(res => res.json())
+                .then(emails => {
+                    this.emails = emails;
+                    this.selectedEmail=this.emails[0];
+                });
+            this.emailToEdit = undefined;
+            this.showEmailEdit = false;
+        }
 },
 computed: {
     emailsToDisplay() {
