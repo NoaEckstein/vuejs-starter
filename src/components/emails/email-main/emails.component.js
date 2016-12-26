@@ -16,6 +16,7 @@ export default {
         }
     },
     methods: {
+    
         deleteEmail(deleteReq) {
             console.log('Deleting Email: ', deleteReq.emailId, ' requested at: ', deleteReq.timestamp);
             this.emails = this.emails.filter(email => email.id !== deleteReq.emailId);
@@ -35,7 +36,10 @@ export default {
         // fetch('http://localhost:3003/item')
         this.$http.get('email')
             .then(res => res.json())
-            .then(emails => this.emails = emails);
+            .then(emails => {
+                this.emails = emails;
+                this.selectedEmail=this.emails[0];
+            });
         this.emailToEdit = undefined;
         this.showEmailEdit = false;
     }
