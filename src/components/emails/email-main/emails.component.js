@@ -9,12 +9,16 @@ export default {
 
     data: () => {
         return {
+            showcomp: false,
             name: 'avital',
             emails: [],
             emailsFilter:''
         }
     },
     methods: {
+        showCompose() {
+           showcomp = !showcomp
+        },
         deleteEmail(deleteReq) {
             console.log('Deleting Email: ', deleteReq.emailId, ' requested at: ', deleteReq.timestamp);
             this.emails = this.emails.filter(email => email.id !== deleteReq.emailId);

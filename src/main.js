@@ -8,6 +8,7 @@ import About from './components/about';
 import Emails from './components/emails/email-main/email-main';
 import MainNav from './components/main-nav';
 import Events from './components/events';
+import Compose from './components/emails/email-compose/email-compose'
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -26,6 +27,9 @@ const routes = [{
   },{
     path: '/emails',
     component: Emails
+    },{
+    path: '/emails/compose',
+    component: Compose
   }
 ];
 
