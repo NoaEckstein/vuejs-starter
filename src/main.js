@@ -12,6 +12,8 @@ import Events from './components/events/event-center';
 import EventDetails from './components/events/event-details';
 
 
+
+
 Vue.use(VueResource);
 Vue.use(VueRouter);
 Vue.http.options.root = 'http://localhost:3003';
@@ -23,21 +25,18 @@ const routes = [{
   path: '/about',
   component: About
 }, {
-  path: '/events',
-  component: Events
-},{
-  path: '/details',
+   path: '/event', 
+   component: Events
+}, {
+  path: '/event/:id', 
   component: EventDetails
-},{
-    path: '/events',
-    component: Events
-  },{
-    path: '/emails',
-    component: Emails
-    },{
-    path: '/emails/compose',
-    component: Compose
-  }
+}, {
+  path: '/emails',
+  component: Emails
+}, {
+  path: '/emails/compose',
+  component: Compose
+},
 ];
 
 const router = new VueRouter({

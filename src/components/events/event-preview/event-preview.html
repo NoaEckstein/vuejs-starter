@@ -1,3 +1,4 @@
 <section :class="{selected: event.isSelected}">
     {{event.name}}
+    <router-link :to="`/event/${event.id}/edit`">Edit</router-link>
 </section>

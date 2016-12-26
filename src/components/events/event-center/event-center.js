@@ -16,8 +16,7 @@ export default {
       //     if (event.id === eventId)   event.isSelected = !event.isSelected;
       //     else                    event.isSelected = false;
       // });
-      
-      // this.$router.push(`/event/${eventId}`);
+      this.$router.push(`/event/${eventId}`);
     },
 
     reloadEvents() {

@@ -1,3 +1,10 @@
-<div>
+<section v-if="event">
   <h1>Event detail</h1>
-</div>
+  <h2>{{event.name}}</h2>
+  <h3>{{event.status}}</h3>
+  <h3 v-html="event.description"></h3>
+  <h3 v-html="event.venue.name"></h3>
+  <h3 v-html="event.venue.address_1"></h3>
+  <h3 v-html="event.venue.city"></h3>
+  <a v-bind:href="event.link">Link to the event</a>
+</section>
